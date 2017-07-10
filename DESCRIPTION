@@ -1,0 +1,13 @@
+Package: reproducabilityCourse
+Type: Package
+Title: Course example package
+Version: 0.1.0
+Author: Marieke Dirksen
+Maintainer: <marieke.dirksen@knmi.nl>
+Description: Example package for the SENSE A2 course in January 2018
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Import: devtools,
+        roxygen2
+RoxygenNote: 6.0.1
