@@ -12,7 +12,7 @@ square_area(length, width)
 \item{width}{The width of the square [m]}
 }
 \description{
-Function to calculate the area of a square
+Function to calculate the area of a square. Requires numeric input.
 }
 \examples{
 square_area(4,5)

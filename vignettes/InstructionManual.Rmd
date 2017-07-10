@@ -1,0 +1,79 @@
+---
+title: "Instruction Manual"
+author: "Marieke Dirksen"
+date: "July 10, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+
+## Course schedule
+
+| Time | Description |
+|------|-------------|
+| 09:00-09:15 | Welkom & Koffie |
+| 09:15-09:30 | Introduction | 
+| 09:30-10:30 | Git & GitHub |
+| 10:30-10:45 | Koffie break |
+| 10:45-12:00 | R projects & documentation of code |
+| 12:00-13:00 | Lunch Break |
+| 13:00-14:30 | Putting it all together: combining Rstudio with Github |
+| 14:30-14:45 | Koffie Break |
+| 14:45-16:00 | Protect your code: Travis CI |
+| 16:00-17:00 | Round up practicals & time for questions |
+| 17:00-17:30 | Drinks |
+
+
+What we are going to do in this course
+
+* location of the course
+* course schedule
+* who is doing which part of the course  
+
+The code for this course can be found [here](https://github.com/MariekeDirk/Reproducability-Reusability-course.git)
+
+# Git and GitHub
+Background information on git and github, written by the person teaching this topic
+
+# Documentation of code in R
+examples of code documentation, written by the person teaching this topic
+
+```{r function}
+#'
+#'@title Square area
+#'@description Function to calculate the area of a square. Requires numeric input. 
+#'@param length The length of the square [m]
+#'@param width The width of the square [m]
+#'@examples
+#'square_area(4,5)
+#'
+#'\dontrun{
+#'square_area(4,"5")}
+#'@author Marieke Dirksen
+#'@export
+#'
+
+square_area<-function(length,width){
+  if(!inherits(length,"numeric") | !inherits(width,"numeric")) {
+    message("Your length or width is not numeric")
+    return(FALSE)
+  } else {
+    area<-length*width
+    return(area)
+  }
+    
+}
+
+square_area(3,4)
+```
+
+# Combining Rstudio and GitHub
+examples version control in Rstudio, written by the person teaching this topic
+
+# Travis CI
+how to put your code online, written by the person teaching this topic
