@@ -112,7 +112,7 @@ library(devtools)
 devtools::document()
 ```
 
-> **Excercise 1**
+> **Excercise 3.1**
 >
 > Create your own Function and document the code in a .Rd file.   
 > Suggestions: 
@@ -123,12 +123,12 @@ devtools::document()
 
 ## Test your function
 
-> **Excercise 2**
+> **Excercise 3.2**
 >
 > Write a testthat function. An example is included in tests/testthat/   
 > For more information check out the [R journal on testthat](https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf) 
 
-> **Excercise 3**
+> **Excercise 3.3**
 >
 > Test the different options to built and reload your package.    
 > There are buttons below Build, but you can use key combinations like: Ctrl+Shift+B, Ctrl+Shift+T and Ctrl+Shift+E
@@ -156,4 +156,20 @@ If there is more time:
  
 
 # Travis CI
-how to put your code on-line, written by the person teaching this topic
+
+* [Travis CI](https://travis-ci.org/) is used to check your code you put on GitHub. You can login with your GitHub account.
+* To include Travis CI to your repository check [this](https://docs.travis-ci.com/user/languages/r) website. 
+* To see if your branch passes the test you can add an image ![](https://travis-ci.org/MariekeDirk/Reproducability-Reusability-course.svg?branch=master)
+
+To this repository the .travis.yml file inlcudes the following code:
+```{r,eval=FALSE}
+language: R
+sudo: false
+cache: packages
+```
+
+> **Excercise 5.1**
+>
+> Put your repositories on Travis CI and pass the test.
+
+ 
