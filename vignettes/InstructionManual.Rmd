@@ -159,7 +159,7 @@ If there is more time:
 
 * [Travis CI](https://travis-ci.org/) is used to check your code you put on GitHub. You can login with your GitHub account.
 * To include Travis CI to your repository check [this](https://docs.travis-ci.com/user/languages/r) website. 
-* To see if your branch passes the test you can add an image ![](https://travis-ci.org/MariekeDirk/Reproducability-Reusability-course.svg?branch=master)
+* To see if your branch passes the test you can add an image [![Build Status](https://travis-ci.org/MariekeDirk/Reproducability-Reusability-course.svg?branch=master)](https://travis-ci.org/MariekeDirk/Reproducability-Reusability-course)
 
 To this repository the .travis.yml file inlcudes the following code:
 ```{r,eval=FALSE}
