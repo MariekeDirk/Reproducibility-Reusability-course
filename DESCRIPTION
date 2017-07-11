@@ -5,7 +5,7 @@ Version: 0.1.0
 Author: Marieke Dirksen
 Maintainer: <marieke.dirksen@knmi.nl>
 Description: Example package for the SENSE A2 course in January 2018. This package includes a testthat function, documentation of code in man and an intruction manual in the folder vignettes.
-License: What license is it under?
+License: AGPL-3
 Encoding: UTF-8
 LazyData: true
 Import: devtools,
