@@ -2,7 +2,16 @@
 title: "Instruction Manual"
 author: "Marieke Dirksen"
 date: "July 10, 2017"
-output: html_document
+output: 
+   html_document:
+            pandoc_args:  [
+      "--title-prefix", "Foo",
+      "--id-prefix", "Bar",
+      "--number-sections"
+      ]
+            theme: yeti
+            highlight: tango
+            fig_caption: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -10,40 +19,63 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Introduction
-
+The course is given at the [KNMI](https://www.knmi.nl/over-het-knmi/contact/contactformulier). Make sure you bring a passport or ID card. We meet in the reception hall downstairs.  
 
 ## Course schedule
 
 | Time | Description |
 |------|-------------|
-| 09:00-09:15 | Welkom & Koffie |
+| 09:00-09:15 | Welcome & Coffee |
 | 09:15-09:30 | Introduction | 
 | 09:30-10:30 | Git & GitHub |
-| 10:30-10:45 | Koffie break |
+| 10:30-10:45 | Coffee break |
 | 10:45-12:00 | R projects & documentation of code |
 | 12:00-13:00 | Lunch Break |
-| 13:00-14:30 | Putting it all together: combining Rstudio with Github |
-| 14:30-14:45 | Koffie Break |
+| 13:00-14:30 | Putting it all together: combining Rstudio with GitHub |
+| 14:30-14:45 | Coffee Break |
 | 14:45-16:00 | Protect your code: Travis CI |
 | 16:00-17:00 | Round up practicals & time for questions |
 | 17:00-17:30 | Drinks |
 
+## What do I need for this course?
+* A GitHub account 
+* Travis CI account
+* The code, can be found [here](https://github.com/MariekeDirk/Reproducability-Reusability-course.git)
 
-What we are going to do in this course
-
-* location of the course
-* course schedule
-* who is doing which part of the course  
-
-The code for this course can be found [here](https://github.com/MariekeDirk/Reproducability-Reusability-course.git)
 
 # Git and GitHub
-Background information on git and github, written by the person teaching this topic
+My suggestion would be to make this session interactive with some exercises. 
+
+The following topics I would suggest for this course:
+
+Git:
+
+* Local version control
+* Using git to modify a .txt file with some text
+* Practice commit & revert 
+
+GitHub:
+
+* Introduction (movie or something): Collaboration multiple people
+* Private vs. Public
+* Branches
+* Push and Pull
+* Forking someone's repo
 
 # Documentation of code in R
-examples of code documentation, written by the person teaching this topic
 
-```{r function}
+## Loading a package from GitHub
+1. Go to the [scource code](https://github.com/MariekeDirk/Reproducability-Reusability-course.git) on GitHub and Fork the repository to your own account
+2. Copy the https link using the button clone or download. 
+3. Go to Rstudio, click on file, new project, version controls, git and paste the link. You can now work on the project from your own computer. 
+
+![screen shot of the repository](/nobackup/users/dirksen/Reproducability-Reusability-course/vignettes/img/gihubrepo.png)
+
+## Writing functions
+
+Function are saved in the R folder. To document the function roxygen2 is used. Below an example of a function with documentation:
+
+```{r function,eval=FALSE}
 #'
 #'@title Square area
 #'@description Function to calculate the area of a square. Requires numeric input. 
@@ -72,8 +104,56 @@ square_area<-function(length,width){
 square_area(3,4)
 ```
 
+
+The function description is stored in .Rd files (folder man). To add your function description to the documentation of your package use:
+
+```{r,eval=FALSE}
+library(devtools)
+devtools::document()
+```
+
+> **Excercise 1**
+>
+> Create your own Function and document the code in a .Rd file.   
+> Suggestions: 
+>
+> * Calculate the area of a circle
+* Volume of a shpere 
+* Mean value from random numbers  
+
+## Test your function
+
+> **Excercise 2**
+>
+> Write a testthat function. An example is included in tests/testthat/   
+> For more information check out the [R journal on testthat](https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf) 
+
+> **Excercise 3**
+>
+> Test the different options to built and reload your package.    
+> There are buttons below Build, but you can use key combinations like: Ctrl+Shift+B, Ctrl+Shift+T and Ctrl+Shift+E
+> Fix posible errors and warnings
+
+## Suggested reading
+* [Rstudio Support](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
+* [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/)
+
+
 # Combining Rstudio and GitHub
-examples version control in Rstudio, written by the person teaching this topic
+Now you have created your own function in the project, documented the code and solved all errors and warnings its time for the next step: Putting your code back on GitHub. 
+
+Some suggestions for the course:
+
+* config git user.name and user.email global
+* commit changes
+* push the changes to your github
+* merge the forked branch with the master
+
+If there is more time:
+
+* revert changes
+* stash and other options
+ 
 
 # Travis CI
-how to put your code online, written by the person teaching this topic
+how to put your code on-line, written by the person teaching this topic
