@@ -20,18 +20,18 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Introduction
-Reproducability of research is becomming more and more important ([nature special](http://www.nature.com/news/reproducibility-1.17552)). If we cann't reproduce research results, how can we use them for future research? What is the value of irreproducable conclusions? To improve reproducability training is important to boost reproducability ([nature,2016](http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)). 
+Reproducibility of research is becoming more and more important ([nature special](http://www.nature.com/news/reproducibility-1.17552)). If we can't reproduce research results, how can we use them for future research? What is the value of irreproducible conclusions? To improve reproducibility training is important to boost reproducibility ([nature,2016](http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)). 
 
 ![](/nobackup/users/dirksen/Reproducability-Reusability-course/vignettes/img/reproducibility-graphic.jpg)
 
-During this course we will introduce you to tools to make your code reproducable and re-usable for other researchers. As it's not posible to introduce you to all software we made a selection. Our focus will be on the reproducability of code by intrdoducing you to:
+During this course we will introduce you to tools to make your code reproducible and re-usable for other researchers. As it's not possible to introduce you to all software we made a selection. Our focus will be on the reproducibility of code by introducing you to:
 
 * [Git](https://git-scm.com/)
 * [GitHub](https://github.com/)
 * [Rprojects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects), including [code documentation in R](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html) and [testing functions](https://www.rdocumentation.org/packages/testthat/versions/1.0.2/topics/testthat) 
 * [Travis CI](https://travis-ci.org/)
 
-For a fully reproducable research you also want to link your data to GitHub, which is posible with e.g. [Docker](https://docs.docker.com/docker-hub/github/). 
+For a fully reproducible research you also want to link your data to GitHub, which is possible with e.g. [Docker](https://docs.docker.com/docker-hub/github/). 
 
 ## Course schedule
 The course is given at the [KNMI](https://www.knmi.nl/over-het-knmi/contact/contactformulier). Make sure you bring a passport or ID card. We meet in the reception hall downstairs. 
@@ -77,7 +77,7 @@ GitHub:
 
 # R projects & documentation of code
 
-## Loading a package from GitHub
+## Loading a the code from GitHub
 1. Go to the [scource code](https://github.com/MariekeDirk/Reproducability-Reusability-course.git) on GitHub and Fork the repository to your own account
 2. Copy the https link using the button clone or download. 
 3. Go to Rstudio, click on file, new project, version controls, git and paste the link. You can now work on the project from your own computer. 
@@ -131,10 +131,18 @@ devtools::document()
 > Suggestions: 
 >
 > * Calculate the area of a circle
-* Volume of a shpere 
-* Mean value from random numbers  
+> * Volume of a shpere 
+> * Mean value from random numbers  
 
 ## Test your function
+Sometimes your make small changes to your code without generating warnings or errors. It can however occur that the output of your function did change. To ensure that for the same input the function always generates the same output test functions are written. The test function in this package looks like this:
+
+```{r, eval=FALSE}
+context("test square area")
+test_that("square area equal",{
+expect_equal(square_area(3,4),12)
+})
+```
 
 > **Excercise 3.2**
 >
@@ -168,18 +176,18 @@ If there is more time:
 * stash and other options
  
 
-# Travis CI
+# Protect your code: Travis CI
 
 > Points to include:
 >
 >* Short overview of other systems checking your code
-* What travis does and why it is usefull for your research
+>* What travis does and why it is usefull for your research
 
 * [Travis CI](https://travis-ci.org/) is used to check your code you put on GitHub. You can login with your GitHub account.
 * To include Travis CI to your repository check [this](https://docs.travis-ci.com/user/languages/r) website. 
 * To see if your branch passes the test you can add an image [![Build Status](https://travis-ci.org/MariekeDirk/Reproducability-Reusability-course.svg?branch=master)](https://travis-ci.org/MariekeDirk/Reproducability-Reusability-course)
 
-To this repository the .travis.yml file inlcudes the following code:
+To this repository the .travis.yml file includes the following code:
 ```{r,eval=FALSE}
 language: R
 sudo: false
@@ -189,5 +197,15 @@ cache: packages
 > **Excercise 5.1**
 >
 > Put your repositories on Travis CI and pass the test.
+
+> **Excercise 5.2**
+>
+> (a) Create a branch with an error 
+> (b) Merge a failed branch with the master
+> (c) Revert the changes...we want a master without errors/warnings
+> (d) Make your master branch protected
+> (e) Try to merge the failed branch again
+
+
 
  
