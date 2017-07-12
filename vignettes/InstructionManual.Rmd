@@ -75,6 +75,7 @@ GitHub:
 * Forking someone's repo
 
 # R projects & documentation of code
+## Package structure
 
 ## Loading a package from GitHub
 1. Go to the [scource code](https://github.com/MariekeDirk/Reproducability-Reusability-course.git) on GitHub and Fork the repository to your own account
@@ -145,6 +146,10 @@ devtools::document()
 > Test the different options to built and reload your package.    
 > There are buttons below Build, but you can use key combinations like: Ctrl+Shift+B, Ctrl+Shift+T and Ctrl+Shift+E
 > Fix posible errors and warnings
+
+## Documentation of datasets
+
+> Example Jurian
 
 ## Suggested reading
 * [Rstudio Support](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
