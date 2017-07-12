@@ -57,6 +57,33 @@ The course is given at the [KNMI](https://www.knmi.nl/over-het-knmi/contact/cont
 
 
 # Git and GitHub
+
+
+## Git
+Below an example of how git works. We start from scratsh by creating a test directory and a test file test.txt. We are going to change the content of the file, and revert the changes. 
+```{bash, eval=FALSE}
+cd ~./Documents/test
+mkdir test
+cd test
+echo something > test.txt
+ls
+cat test.txt
+
+git help
+git config --global user.name "Your Name Comes Here"
+git config --global user.email you@yourdomain.example.com
+git init
+git add test.txt
+git commit -m 'first commit'
+
+echo test > test.txt
+
+git commit -am 'commiting something which is wrong...'
+
+git reset HEAD~
+cat test.txt
+```
+
 My suggestion would be to make this session interactive with some exercises. 
 
 The following topics I would suggest for this course:
@@ -75,7 +102,11 @@ GitHub:
 * Push and Pull
 * Forking someone's repo
 
+## Suggested reading
+* [git tutorial](https://git-scm.com/docs/gittutorial)
+
 # R projects & documentation of code
+## Package structure
 
 ## Loading a the code from GitHub
 1. Go to the [scource code](https://github.com/MariekeDirk/Reproducability-Reusability-course.git) on GitHub and Fork the repository to your own account
@@ -155,10 +186,13 @@ expect_equal(square_area(3,4),12)
 > There are buttons below Build, but you can use key combinations like: Ctrl+Shift+B, Ctrl+Shift+T and Ctrl+Shift+E
 > Fix posible errors and warnings
 
+## Documentation of datasets
+
+> Example Jurian
+
 ## Suggested reading
 * [Rstudio Support](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
 * [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/)
-
 
 # Putting it all together: combining Rstudio with GitHub
 Now you have created your own function in the project, documented the code and solved all errors and warnings its time for the next step: Putting your code back on GitHub. 
@@ -207,5 +241,3 @@ cache: packages
 > (e) Try to merge the failed branch again
 
 
-
- 
