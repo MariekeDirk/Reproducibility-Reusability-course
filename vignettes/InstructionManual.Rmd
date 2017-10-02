@@ -54,7 +54,7 @@ The course is given at the [KNMI](https://www.knmi.nl/over-het-knmi/contact/cont
 Additional material:
 
 * Relevant literature
-* Protect your code: Travis CI 
+* Protect your code with Travis CI 
 * Take home messages
 * How to do this at home for your own code
 
@@ -113,7 +113,7 @@ GitHub:
 ## Suggested reading
 * [git tutorial](https://git-scm.com/docs/gittutorial)
 
-# R projects & documentation of code
+# R projects 
 ## Package structure
 
 ## Loading a the code from GitHub
@@ -123,7 +123,9 @@ GitHub:
 
 ![screen shot of the repository](/nobackup/users/dirksen/Reproducability-Reusability-course/vignettes/img/gihubrepo.png)
 
-## Writing functions
+## R Markdown 
+
+## Documentation of code
 
 Function are saved in the R folder. To document the function roxygen2 is used. Below an example of a function with documentation:
 
@@ -173,6 +175,21 @@ devtools::document()
 > * Volume of a shpere 
 > * Mean value from random numbers  
 
+
+# Putting it all together: combining Rstudio with GitHub
+Now you have created your own function in the project, documented the code and solved all errors and warnings its time for the next step: Putting your code back on GitHub. 
+
+Some suggestions for the course:
+
+* config git user.name and user.email global
+* commit changes
+* push the changes to your github
+* merge the forked branch with the master
+
+If there is more time:
+
+* revert changes
+* stash and other options
 ## Test your function
 Sometimes your make small changes to your code without generating warnings or errors. It can however occur that the output of your function did change. To ensure that for the same input the function always generates the same output test functions are written. The test function in this package looks like this:
 
@@ -201,24 +218,24 @@ expect_equal(square_area(3,4),12)
 ## Suggested reading
 * [Rstudio Support](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
 * [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/)
-
-# Putting it all together: combining Rstudio with GitHub
-Now you have created your own function in the project, documented the code and solved all errors and warnings its time for the next step: Putting your code back on GitHub. 
-
-Some suggestions for the course:
-
-* config git user.name and user.email global
-* commit changes
-* push the changes to your github
-* merge the forked branch with the master
-
-If there is more time:
-
-* revert changes
-* stash and other options
  
+# Appendix A: Relevant literature
 
-# Protect your code: Travis CI
+> Personally I also put a suggested reading at the end of each chapter, we could make a list of all the suggested reading and 
+additional information here.
+
+* [git tutorial](https://git-scm.com/docs/gittutorial)
+* [Rstudio Support](https://support.rstudio.com/hc/en-us/articles/200486488-Developing-Packages-with-RStudio)
+* [R Packages by Hadley Wickham](http://r-pkgs.had.co.nz/)
+
+# Appendix B: Take home messages
+
+* [course package](https://github.com/MariekeDirk/Reproducibility-Reusability-course.git)
+* Most important lessons learned 
+* DIYS instructions
+
+
+# Appendix C: Protect your code with Travis CI
 
 > Points to include:
 >
