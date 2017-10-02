@@ -20,9 +20,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # Introduction
-Reproducibility of research is becoming more and more important ([nature special](http://www.nature.com/news/reproducibility-1.17552)). If we can't reproduce research results, how can we use them for future research? What is the value of irreproducible conclusions? To improve reproducibility training is important to boost reproducibility ([nature,2016](http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)). 
+Reproducibility of research is becoming more and more important ([Nature special](http://www.nature.com/news/reproducibility-1.17552)). If we can't reproduce research results, how can we use them for future research? What is the value of irreproducible conclusions? To improve reproducibility training is important to boost reproducibility ([Nature,2016](http://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970)). 
 
-![](/nobackup/users/dirksen/Reproducibility-Reusability-course/vignettes/img/reproducibility-graphic.jpg)
+![](/nobackup/users/dirksen/Reproducability-Reusability-course/vignettes/img/reproducibility-graphic.jpg)
 
 During this course we will introduce you to tools to make your code reproducible and re-usable for other researchers. As it's not possible to introduce you to all software we made a selection. Our focus will be on the reproducibility of code by introducing you to:
 
@@ -30,8 +30,6 @@ During this course we will introduce you to tools to make your code reproducible
 * [GitHub](https://github.com/)
 * [Rprojects](https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects), including [code documentation in R](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html) and [testing functions](https://www.rdocumentation.org/packages/testthat/versions/1.0.2/topics/testthat) 
 * [Travis CI](https://travis-ci.org/)
-
-For a fully reproducible research you also want to link your data to GitHub, which is possible with e.g. [Docker](https://docs.docker.com/docker-hub/github/). 
 
 ## Course schedule
 The course is given at the [KNMI](https://www.knmi.nl/over-het-knmi/contact/contactformulier). Make sure you bring a passport or ID card. We meet in the reception hall downstairs. 
@@ -42,13 +40,23 @@ The course is given at the [KNMI](https://www.knmi.nl/over-het-knmi/contact/cont
 | 09:15-09:30 | Introduction | 
 | 09:30-10:30 | Git & GitHub |
 | 10:30-10:45 | Coffee break |
-| 10:45-12:00 | R projects & documentation of code |
+| 10:45-11:00 | R projects structure |
+| 11:00-11:30 | R Markdown |
+| 11:30-12:00 | Documentation of code |
 | 12:00-13:00 | Lunch Break |
 | 13:00-14:30 | Putting it all together: combining Rstudio with GitHub |
 | 14:30-14:45 | Coffee Break |
-| 14:45-16:00 | Protect your code: Travis CI |
+| 14:45-15:15 | Test your function |
+| 15:15-16:00 | Documentation of data |
 | 16:00-17:00 | Round up practicals & time for questions |
 | 17:00-17:30 | Drinks |
+
+Additional material:
+
+* Relevant literature
+* Protect your code: Travis CI 
+* Take home messages
+* How to do this at home for your own code
 
 ## What do I need for this course?
 * A GitHub account 
