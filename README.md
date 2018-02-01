@@ -4,7 +4,7 @@
 Crash Course with the following topics:
 
 * Git
-* Github
+* Github & GitHub Desktop (yay!)
 * Documentation of R code
 * Combining Rstudio with GitHub 
 * Travis CI
